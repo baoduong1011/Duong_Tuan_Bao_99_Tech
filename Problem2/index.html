@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fancy Form</title>
+
+    <!-- You may add more stuff here -->
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
+    <form onsubmit="return !1">
+        <div class="swap-container">
+            <div>
+                <h3 class="form-title">Swap</h3>
+                <p id="error-message" class="error-message"></p>
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+                    <label for="select-currency">Currency</label>
+                    <select id="select-currency"></select>
+                </div>
+
+                <div class="form-row">
+                    <label for="input-amount">Amount to send</label>
+                    <input id="input-amount" />
+                </div>
+
+                <div class="form-row">
+                    <label for="output-amount">Amount to receive (USD)</label>
+                    <input disabled id="output-amount" />
+                </div>
+            </div>
+
+            <button id="confirm-swap">CONFIRM SWAP</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+
+</html>
