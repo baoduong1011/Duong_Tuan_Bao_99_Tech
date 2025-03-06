@@ -1,44 +1,61 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- social links for refinedguides.com -->
+  </head>
+  <body>
+    <main>
+      <h1>Currency Converter</h1>
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fancy Form</title>
-
-    <!-- You may add more stuff here -->
-    <link href="style.css" rel="stylesheet" />
-</head>
-
-<body>
-
-    <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-    <form onsubmit="return !1">
-        <div class="swap-container">
-            <div>
-                <h3 class="form-title">Swap</h3>
-                <p id="error-message" class="error-message"></p>
-            </div>
-
-            <div class="form-group">
-                <div class="form-row">
-                    <label for="select-currency">Currency</label>
-                    <select id="select-currency"></select>
-                </div>
-
-                <div class="form-row">
-                    <label for="input-amount">Amount to send</label>
-                    <input id="input-amount" />
-                </div>
-
-                <div class="form-row">
-                    <label for="output-amount">Amount to receive (USD)</label>
-                    <input disabled id="output-amount" />
-                </div>
-            </div>
-
-            <button id="confirm-swap">CONFIRM SWAP</button>
+      <div class="controls" id="controls">
+        <div class="control">
+          <button id="base" data-drawer>USD</button>
+          <input
+            type="number"
+            id="base-input"
+            value="0"
+            min="0"
+            step="any"
+            inputmode="decimal"
+          />
         </div>
-    </form>
-    <script src="script.js"></script>
-</body>
+        <div class="control">
+          <button id="target" data-drawer>EUR</button>
+          <input type="number" id="target-input" value="0" readonly />
+        </div>
+        <button class="swap-btn" id="swap-btn">
+          <span class="material-symbols-outlined"> sync_alt </span>
+        </button>
+      </div>
+      
+      <button id="convert-btn">Convert</button>
 
+      <div class="exchange-rate">
+        <h5>Exchange Rate</h5>
+        <span id="exchange-rate"></span>
+      </div>
+
+      <div class="drawer" id="drawer">
+        <div class="title">
+          <button id="dismiss-btn">
+            <span class="material-symbols-outlined"> west </span>
+          </button>
+          <h3>Select Currency</h3>
+        </div>
+        <div class="search">
+          <input type="search" id="search" placeholder="Search" />
+        </div>
+        <ul class="currency-list" id="currency-list"></ul>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
